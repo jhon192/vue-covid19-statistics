@@ -1,24 +1,20 @@
 # vue-covid19-statistics
 
 ## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
+### Image
+![image project](./public/cap.png)
+
+### Env variable configuration
+```bash
+VUE_APP_URL=your_url
+VUE_APP_API_KEY=your_api_key
+VUE_APP_API_HOST=your_api_host
 ```
+### Running on the browser
+```sh
+npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+> PD: not all flags are complete
