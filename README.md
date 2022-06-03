@@ -5,6 +5,9 @@
 ### Image
 ![image project](./public/cap.png)
 
+### demostration
+![gif](./public/gif_demostration.gif)
+
 ### Env variable configuration
 ```bash
 VUE_APP_URL=your_url
