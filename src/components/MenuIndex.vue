@@ -97,14 +97,17 @@
           <tr class="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
             <td class="px-6 py-4">{{ index + 1 }}</td>
             <td class="px-6 py-4">
-              <img
+              <div v-for="(flag, index) in countrys" :key="index">
+                <img
                 :src="
-                  'https://countryflagsapi.com/png/' +
-                  data.country.split('-').join(' ')
+                  data.country.split('-').join(' ') == flag.country
+                    ? flag.flag
+                    : ''
                 "
                 alt=""
                 class="w-20"
               />
+              </div>
             </td>
             <td class="px-6 py-4 font-medium text-white whitespace-nowrap">
               {{ data.country }}
@@ -165,7 +168,6 @@
 <script>
 import axios from "axios";
 
-
 const { VUE_APP_URL, VUE_APP_API_KEY, VUE_APP_API_HOST } = process.env;
 
 export default {
@@ -175,6 +177,7 @@ export default {
       dataResponse: [],
       filterDataResponse: [],
       textSearch: "",
+      countrys: require("@/assets/countrys.json").data,
     };
   },
   async mounted() {
@@ -195,7 +198,7 @@ export default {
       a.country.localeCompare(b.country)
     );
 
-    console.log(process.env)
+
   },
   methods: {
     searchCountry() {
